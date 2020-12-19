@@ -1,1 +1,4 @@
 node_modules/
+Resources/
+config/default.json
+client/node_modules/
