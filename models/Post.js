@@ -10,7 +10,7 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    name: {   // so we have the ability to not delete the post even if the asscociated user is deleted
+    name: {   // so we have the ability to not delete the post even if the asscociated user is      deleted
         type: String
     },
     avatar: {
