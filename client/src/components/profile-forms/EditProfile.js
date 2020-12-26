@@ -50,7 +50,7 @@ const EditProfile = ({
             instagram: loading || !profile.social ? '' : profile.instagram
         });
     // eslint-disable-next-line
-    },[loading]); // run useEffect only on loading
+    },[loading, getCurrentProfile]); // run useEffect only on loading
 
     const {
         company,
