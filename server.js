@@ -26,6 +26,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
+        // go from curr dir to the client dir then to the build folder and launch index.html
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
