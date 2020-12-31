@@ -18,7 +18,9 @@ const Post = require('../../models/Post');
 
 router.get('/me', auth, async (req, res) => {
     try {
-        const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name', 'avatar']);
+        const profile = await Profile.findOne({
+              user: req.user.id })
+              .populate('user', ['name', 'avatar']);
 
         if (!profile) {
             return res.status(400).json({ msg: 'There is no profile for this user' });
@@ -376,13 +378,14 @@ router.get('/github/:username', async (req, res) => {
         const uri = encodeURI(
             `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
         );
-        const headers = {
-            'user-agent': 'node.js',
-            Authorization: `token ${config.get('githubToken')}`
-        };
-        console.log(uri);
-        const gitHubResponse = await axios.get(uri, { headers });
-        console.log(gitHubResponse.data);
+        // const headers = {
+        //     'user-agent': 'node.js',
+        //     Authorization: `token ${config.get('githubToken')}`
+        // };
+//        console.log(uri);
+       // const gitHubResponse = await axios.get(uri, { headers });
+        const gitHubResponse = await axios.get(uri);
+       // console.log(gitHubResponse.data);
         return res.json(gitHubResponse.data);
     } catch (err) {
         console.error(err.message);

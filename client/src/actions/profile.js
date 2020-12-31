@@ -119,7 +119,8 @@ export const createProfile = (formData, history, edit = false) => async dispatch
         dispatch({
             type: PROFILE_ERROR,
             payload: {
-                msg: err.response.statusText, status: err.response.status
+                msg: err.response.statusText, 
+                status: err.response.status
             }
         });
     }
@@ -193,7 +194,8 @@ export const addEducation = (formData, history) => async dispatch => {
         dispatch({
             type: PROFILE_ERROR,
             payload: {
-                msg: err.response.statusText, status: err.response.status
+                msg: err.response.statusText, 
+                status: err.response.status
             }
         });
     }
@@ -236,7 +238,8 @@ export const deleteEducation = id => async dispatch => {
         dispatch({
             type: PROFILE_ERROR,
             payload: {
-                msg: err.response.statusText, status: err.response.status
+                msg: err.response.statusText,
+                 status: err.response.status
             }
         });
     }
@@ -259,7 +262,8 @@ export const deleteAccount = () => async dispatch => {
             dispatch({
                 type: PROFILE_ERROR,
                 payload: {
-                    msg: err.response.statusText, status: err.response.status
+                    msg: err.response.statusText, 
+                    status: err.response.status
                 }
             });
         }

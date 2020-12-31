@@ -6,9 +6,9 @@ import Spinner from '../layouts/Spinner';
 import { getProfileById } from '../../actions/profile';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
-import ProfileExperience from './ProfileExperience.js';
-import ProfileEducation from './ProfileEducation.js';
-import ProfileGithub from './ProfileGithub.js';
+import ProfileExperience from './ProfileExperience';
+import ProfileEducation from './ProfileEducation';
+import ProfileGithub from './ProfileGithub';
 
 
 const Profile = ({
@@ -29,8 +29,9 @@ const Profile = ({
                     Back To Profiles
                </Link>
                 {/* show button to edit profile if user's own profilr */}
-                {auth.isAuthenticated && auth.loading === false &&
-                    auth.user._id === profile.user._id &&
+                {auth.isAuthenticated && 
+                      auth.loading === false &&
+                      auth.user._id === profile.user._id &&
                     (<Link to='/edit-profile' className='btn btn-dark'>
                         Edit Profile
                     </Link>)}
