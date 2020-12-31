@@ -3,4 +3,4 @@ Resources/
 config/default.json
 client/node_modules/
 resources/
-
+config/production.json
